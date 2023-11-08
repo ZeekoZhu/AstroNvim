@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "astrolight",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -71,6 +71,11 @@ return {
   polish = function()
     vim.opt.wrap = true
     -- Set up custom filetypes
+    vim.filetype.add {
+      extension = {
+        lsyncd = "lua"
+      }
+    }
     -- vim.filetype.add {
     --   extension = {
     --     foo = "fooscript",
