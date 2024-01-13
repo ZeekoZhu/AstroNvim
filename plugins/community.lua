@@ -51,6 +51,10 @@ return {
            dismiss = "<C/>",
          },
        },
+       filetypes = {
+         yaml = true,
+         markdown = true,
+       }
      },
   },
 
