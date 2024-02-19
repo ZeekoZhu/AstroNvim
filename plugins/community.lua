@@ -8,6 +8,7 @@ return {
    { import = "astrocommunity.completion.copilot-lua" },
    { import = "astrocommunity.motion.nvim-surround" },
    { import = "astrocommunity.motion.hop-nvim" },
+   { import = "astrocommunity.media.vim-wakatime" },
    {
      "phaazon/hop.nvim",
      opts = {},
