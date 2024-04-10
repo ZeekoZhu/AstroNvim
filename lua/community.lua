@@ -11,34 +11,66 @@ return {
   -- import/override with your plugins folder
   { import = "astrocommunity.media.vim-wakatime" },
   { import = "astrocommunity.motion.nvim-surround" },
-  { import = "astrocommunity.motion.hop-nvim" },
+  { import = "astrocommunity.motion.flash-nvim" },
   {
-    "phaazon/hop.nvim",
-    opts = {},
-    keys = {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    dependencies = {
       {
-        "f",
-        function() require("hop").hint_words() end,
-        mode = { "n" },
-        desc = "Hop hint words",
+        "AstroNvim/astrocore",
+        opts = {
+          mappings = {
+            x = {
+              ["f"] = {
+                function() require("flash").jump() end,
+                desc = "Flash",
+              },
+              ["R"] = {
+                function() require("flash").treesitter_search() end,
+                desc = "Treesitter Search",
+              },
+              ["F"] = {
+                function() require("flash").treesitter() end,
+                desc = "Flash Treesitter",
+              },
+            },
+            o = {
+              ["r"] = {
+                function() require("flash").remote() end,
+                desc = "Remote Flash",
+              },
+              ["R"] = {
+                function() require("flash").treesitter_search() end,
+                desc = "Treesitter Search",
+              },
+              ["s"] = {
+                function() require("flash").jump() end,
+                desc = "Flash",
+              },
+              ["S"] = {
+                function() require("flash").treesitter() end,
+                desc = "Flash Treesitter",
+              },
+            },
+            n = {
+              ["f"] = {
+                function() require("flash").jump() end,
+                desc = "Flash",
+              },
+              ["F"] = {
+                function() require("flash").treesitter() end,
+                desc = "Flash Treesitter",
+              },
+            },
+          },
+        },
       },
-      {
-        "<S-f>",
-        function() require("hop").hint_lines() end,
-        mode = { "n" },
-        desc = "Hop hint lines",
-      },
-      {
-        "f",
-        function() require("hop").hint_words { extend_visual = true } end,
-        mode = { "v" },
-        desc = "Hop hint words",
-      },
-      {
-        "<S-f>",
-        function() require("hop").hint_lines { extend_visual = true } end,
-        mode = { "v" },
-        desc = "Hop hint lines",
+    },
+    opts = {
+      modes = {
+        char = {
+          enabled = false,
+        },
       },
     },
   },
