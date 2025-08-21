@@ -17,3 +17,5 @@ vim.filetype.add {
     ["~/%.config/foo/.*"] = "fooscript",
   },
 }
+-- exec vim command :set list in lua
+vim.api.nvim_command('set list')

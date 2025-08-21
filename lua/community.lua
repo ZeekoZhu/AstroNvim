@@ -74,25 +74,21 @@ return {
       },
     },
   },
-  { import = "astrocommunity.completion.copilot-lua" },
+  { import = "astrocommunity.completion.codeium-nvim" },
   {
-    "copilot.lua",
+    "codeium.nvim",
     opts = {
-      suggestion = {
-        keymap = {
+      enable_cmp_source = false,
+      virtual_text = {
+        enabled = true,
+        default_filetype_enabled = true,
+        key_bindings = {
           accept = "<C-f>",
-          accept_word = false,
-          accept_line = false,
           next = "<C-.>",
           prev = "<C-,>",
-          dismiss = "<C/>",
-        },
-      },
-      filetypes = {
-        yaml = true,
-        markdown = true,
-        json = true,
+          clear = "<C/>",
+        }
       },
     },
-  },
+  }
 }
