@@ -4,7 +4,6 @@
 -- things like custom filetypes. This just pure lua so anything that doesn't
 -- fit in the normal config locations above can go here
 
-
 -- Set up custom filetypes
 vim.filetype.add {
   extension = {
@@ -18,4 +17,5 @@ vim.filetype.add {
   },
 }
 -- exec vim command :set list in lua
-vim.api.nvim_command('set list')
+vim.api.nvim_command "set list"
+require("wrapping").soft_wrap_mode()
